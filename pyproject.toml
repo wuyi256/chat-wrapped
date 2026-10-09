@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chat-wrapped"
+version = "0.1.0"
+description = "聊天记录年度总结：把微信导出的聊天记录变成一份「年度歌单」式的 HTML 报告"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["wechat", "chat-log", "data-analysis", "visualization", "cli"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.optional-dependencies]
+# 装了 jieba 热词提取会更准；没装则自动退化为二元语法（bigram）统计
+better-words = ["jieba>=0.42"]
+
+[project.scripts]
+chatwrapped = "chatwrapped.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

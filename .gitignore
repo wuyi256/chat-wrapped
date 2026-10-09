@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.idea/
+.vscode/
+.pytest_cache/
+# 聊天记录是隐私，别提交
+*.txt
+!requirements.txt
+chat-report.html
+demo-report.html
